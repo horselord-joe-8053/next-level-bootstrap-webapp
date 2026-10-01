@@ -1,0 +1,42 @@
+# Traduz Mat — TDD policy
+
+## Loop
+
+1. Map acceptance criteria to **vertical slices** (smallest user-visible behavior).
+2. **Use test seams** from this file and `docs/specs/traduz-v1.md` **as written** — do **not** ask the human to confirm. If gaps or conflicts, fix the spec first or ask **one** question only when blocked.
+3. **Red:** one failing test at one seam.
+4. **Green:** minimal code; run the test, then `./scripts/verify.sh`.
+5. Repeat; refactor during review/evaluate, not inside the red → green loop.
+
+## Default seams
+
+| Seam | Tool | Test behavior |
+|------|------|----------------|
+| HTTP API | pytest + `TestClient` | `GET /health`; `POST /translate` success, validation, length limit |
+| LLM provider | Mock HTTP/client boundary | Fixed fake response; no live API in unit tests |
+| React UI | Vitest + Testing Library | Submit shows translation or error |
+| Browser persistence | Vitest (mock `localStorage`) | History cap, clear, no failures on failed translate |
+| Clipboard | Vitest + injectable seam module | Copy disabled until success; spy seam in App tests |
+
+## Avoid
+
+- Horizontal slicing (all tests, then all code).
+- Testing private helpers instead of public behavior.
+- Live LLM calls in CI.
+
+## UI polish and tickets
+
+Visual polish is harness-owned, not a separate product. See `docs/specs/ui-factory-convention.md`.
+
+When using **`/to-tickets`**, either:
+
+- include UI layout + a11y in each tracer-bullet that changes `frontend/src/**`, or
+- add **UI-CHOOSE** (skill `ui-choose-look`) then **UI implement**, with implement blocked by `docs/specs/<feature>-ui-decision.md`.
+
+Substantial UI: **1–3** look options (not always three); mocks in one Canvas or `docs/mocks/*-ui-options.html` per `docs/specs/ui-factory-convention.md`.
+
+Tests stay at **behavior** seams (roles, labels, enabled/disabled); do not gate merge on screenshot diff unless a future spec adds that.
+
+## Matt `/tdd` skill
+
+When using [mattpocock/skills `/tdd`](https://github.com/mattpocock/skills/blob/main/skills/engineering/tdd/SKILL.md), this file is the Traduz-specific seam reference; the skill is the procedure.
