@@ -32,6 +32,7 @@ Summarize (for yourself, brief): product goal, existing layout, spec UI/a11y bul
 
 ### 2. Propose 1–3 directions (ui-ux-pro-max)
 
+- Run **`.agents/skills/ui-ux-pro-max/scripts/search.py --design-system`** (separate queries per direction). Record output in `-ui-options.md` — installing the skill is **not** enough.
 - Use **separate** `--design-system` searches (or style/color/typography domains) so directions differ in **structure or mood**, not only hex tweaks.
 - Offer **as many options as are genuinely viable**, **minimum 1, maximum 3**. Do not pad to three.
 - For each option record: **id** (A/B/C), **name**, **2–3 sentence rationale**, **STYLE / COLORS / TYPOGRAPHY** (ignore landing PATTERN).
@@ -50,8 +51,8 @@ Use `docs/templates/ui-choose-options.md` as shape. Link to the mock artifact fr
 >
 > | Environment | Mock artifact |
 > |-------------|----------------|
-> | **Cursor IDE** | One **`.canvas.tsx`** beside the chat: follow the built-in **`canvas`** skill (`~/.cursor/skills-cursor/canvas/SKILL.md` or Cursor **Customize → Skills → canvas**). One file with **labeled sections or tabs** for each option; static sample content (translate + history) close to production density. |
-> | **Not Cursor** | One portable **`docs/mocks/<feature-slug>-ui-options.html`** (self-contained, open in browser). Same labeled sections. |
+> | **Cursor IDE** | One **`.canvas.tsx`** beside the chat: follow the built-in **`canvas`** skill (`~/.cursor/skills-cursor/canvas/SKILL.md` or Cursor **Customize → Skills → canvas**). One file with **labeled sections or tabs** for each option; layout and components **as the approved spec describes** (real labels, sample data, primary actions, empty states) — **not** gray wireframe placeholders. |
+> | **Not Cursor** | One portable **`docs/mocks/<feature-slug>-ui-options.html`** (self-contained, open in browser). Same **spec-faithful, production-density** requirement. |
 > | **Other harness with its own preview tool** | Add a **project skill** mirroring this step (mock contract = one file, 1–3 labeled variants) **before** referencing that tool here; until then use **HTML**. |
 
 Do **not** edit `frontend/src/**` in this step.

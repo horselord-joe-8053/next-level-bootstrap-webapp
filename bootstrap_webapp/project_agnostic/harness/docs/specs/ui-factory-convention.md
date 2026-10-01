@@ -45,7 +45,7 @@ Backend-only work skips UI polish. Trivial UI tweaks may waive **UI-CHOOSE** (do
 | 1 | Read spec/ticket, current UI, ui-ux-pro-max; summarize constraints. |
 | 2 | Run **1–3** ui-ux-pro-max design-system searches; **only viable** distinct directions (not always three). |
 | 3 | Write `docs/specs/<feature>-ui-options.md` from `docs/templates/ui-choose-options.md`. |
-| 4 | **Mocks — one file:** **Cursor:** `.canvas.tsx` via built-in **`canvas`** skill. **Not Cursor:** `docs/mocks/<feature>-ui-options.html`. Other harness: add an equivalent preview skill, else HTML. |
+| 4 | **Mocks — one file:** Fidelity comes from the **feature spec** (sections, flows, density), not from another repo or screenshot. **Cursor:** `.canvas.tsx` via **`canvas`** skill. **Not Cursor:** `docs/mocks/<feature>-ui-options.html`. No wireframe-only placeholders. |
 | 5 | User selects A/B/C (or mix); **Cursor** may use AskQuestion. |
 | 6 | Write `docs/specs/<feature>-ui-decision.md`; update spec UI section. |
 | 7 | **IMPLEMENT** applies tokens/layout to `App.tsx` + `styles.css`; behavior unchanged unless spec says so. |

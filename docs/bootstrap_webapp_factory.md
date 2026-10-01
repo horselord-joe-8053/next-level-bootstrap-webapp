@@ -1,5 +1,5 @@
 # Moved
 
-Canonical bootstrap kit: **[../bootstrap_webapp/bootstrap_webapp_factory.md](../bootstrap_webapp/bootstrap_webapp_factory.md)**
+Phase 1: **[../bootstrap_webapp/project_agnostic/bootstrap_webapp_factory.md](../bootstrap_webapp/project_agnostic/bootstrap_webapp_factory.md)**
 
-Use **`bootstrap_webapp/`** (`scripts/`, `templates/`, both phase prompts).
+Kit index: **[../bootstrap_webapp/README.md](../bootstrap_webapp/README.md)**

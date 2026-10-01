@@ -11,7 +11,7 @@ mkdir -p "$REPO_ROOT/backend" "$REPO_ROOT/frontend"
 
 if [[ ! -f "$REPO_ROOT/backend/.env" ]]; then
   cp "$KIT/templates/backend.env.template" "$REPO_ROOT/backend/.env"
-  echo "seed-dev-env: wrote backend/.env — human must set LLM_API_KEY for live LLM."
+  echo "seed-dev-env: wrote backend/.env (extend per product spec in phase 2)."
 else
   echo "seed-dev-env: backend/.env already exists; skipped."
 fi
